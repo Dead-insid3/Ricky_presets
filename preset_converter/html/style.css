@@ -1,0 +1,161 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+#presetApplierContainer, 
+#showPresetContainer, 
+#convertFromDbContainer {
+    display: none;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(128, 0, 128, 0.5);
+    border: 1px solid #4b0082;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+#presetApplierContainer {
+    width: 480px; 
+}
+
+#showPresetContainer {
+    width: 520px; 
+}
+
+#convertFromDbContainer {
+    width: 520px;
+    z-index: 1001;
+}
+
+#presetApplierContainer h2, 
+#showPresetContainer h2, 
+#convertFromDbContainer h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #9370db;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#presetApplierContainer div, 
+#showPresetContainer div.preset-output-area, 
+#convertFromDbContainer div {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 0.95em;
+    color: #b19cd9;
+}
+
+input[type="number"], 
+select, 
+textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #5c3a99;
+    background-color: #2c2c44;
+    color: #f0f0f0;
+    font-size: 0.9em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus, 
+select:focus, 
+textarea:focus {
+    border-color: #9370db;
+    box-shadow: 0 0 8px rgba(147, 112, 219, 0.5);
+    outline: none; 
+}
+
+#presetApplierContainer textarea,
+#convertFromDbContainer textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.5;
+}
+
+#convertFromDbContainer textarea#dbPresetInput {
+    min-height: 180px;
+}
+
+#showPresetContainer textarea {
+    resize: none; 
+    min-height: 120px;
+    line-height: 1.4;
+    font-family: monospace;
+}
+
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+}
+#presetApplierContainer button:last-of-type, 
+#showPresetContainer button:last-of-type, 
+#convertFromDbContainer button:last-of-type {
+    margin-right: 0;
+}
+
+
+#applyBtn, #convertDbBtn {
+    background-color: #6a0dad;
+    color: white;
+}
+#applyBtn:hover, #convertDbBtn:hover {
+    background-color: #800080;
+    transform: translateY(-1px); 
+}
+
+#closeBtn, 
+#closeShowPresetBtn, 
+#closeConvertDbBtn {
+    background-color: #4b0082;
+    color: #e0e0e0;
+}
+#closeBtn:hover, 
+#closeShowPresetBtn:hover, 
+#closeConvertDbBtn:hover {
+    background-color: #5c3a99;
+    transform: translateY(-1px);
+}
+
+#errorMessage, 
+#convertDbErrorMessage {
+    font-size: 0.9em;
+    min-height: 20px;
+    color: #ff6b6b;
+    text-align: center;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: rgba(255, 107, 107, 0.1);
+    border-radius: 4px;
+    display: none;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor de Preset</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="presetApplierContainer">
+        <h2>Aplicar Preset de Aparência</h2>
+        <div>
+            <label for="targetPlayerId">ID do Jogador Alvo (Source):</label>
+            <input type="number" id="targetPlayerId" placeholder="Deixe em branco para aplicar em si mesmo">
+        </div>
+        <div>
+            <label for="presetType">Converter de:</label>
+            <select id="presetType">
+                <option value="qbcore">QB-Core</option>
+                <option value="nation">Nation</option>
+            </select>
+        </div>
+        <div>
+            <label for="presetInput">Cole o JSON do Preset (QB/Nation) aqui:</label>
+            <textarea id="presetInput" rows="10" placeholder="Cole o conteúdo JSON do preset aqui..."></textarea>
+        </div>
+        <button id="applyBtn">Aplicar Preset</button>
+        <button id="closeBtn">Fechar</button>
+        <div id="errorMessage" style="color: red; margin-top: 10px;"></div>
+    </div>
+
+    <div id="showPresetContainer">
+        <h2 id="showPresetTitle">Preset Convertido</h2>
+        <div class="preset-output-area">
+            <label for="currentQbPreset">Formato QB-Core:</label>
+            <textarea id="currentQbPreset" rows="8" readonly></textarea>
+        </div>
+        <div class="preset-output-area">
+            <label for="currentNationPreset">Formato Nation:</label>
+            <textarea id="currentNationPreset" rows="8" readonly></textarea>
+        </div>
+        <button id="closeShowPresetBtn">Fechar Visualização</button>
+    </div>
+
+    <div id="convertFromDbContainer">
+        <h2>Converter Preset do Banco de Dados</h2>
+        <div>
+            <label for="dbPresetInput">Cole o JSON da "skin" (do illenium-appearance) aqui:</label>
+            <textarea id="dbPresetInput" rows="15" placeholder="Cole o JSON completo extraído do banco de dados aqui... Ex: {&quot;model&quot;:&quot;mp_f_freemode_01&quot;, &quot;faceFeatures&quot;:{...}, ...}"></textarea>
+        </div>
+        <button id="convertDbBtn">Converter</button>
+        <button id="closeConvertDbBtn">Fechar</button>
+        <div id="convertDbErrorMessage" style="color: red; margin-top: 10px;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
